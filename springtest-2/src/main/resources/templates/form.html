@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form action = "#" th:action = "@{/form}" th:object = "${person}" method = "post">
+		<p>人名 : <input type = "text" th:field = "*{name}" /></p>
+		<p>年紀 : <input type = "text" th:field = "*{age}" /></p>
+		<!-- <p>性別 : <input type = "text" th:field = "*{gender}" /></p> -->
+		<p>性別 : <input type = "radio" value = "男" th:field = "*{gender}" name = "gender" /> 男
+				 <input type = "radio" value = "女" th:field = "*{gender}" name = "gender" /> 女</p>
+		<!-- <p>工作 : <input type = "text" th:field = "*{work}" /></p> -->
+		<p>工作 : <input type = "radio" value = "士" th:field = "*{work}" name = "work" /> 士
+				 <input type = "radio" value = "農" th:field = "*{work}" name = "work" /> 農
+				 <input type = "radio" value = "工" th:field = "*{work}" name = "work" /> 工
+				 <input type = "radio" value = "商" th:field = "*{work}" name = "work" /> 商
+		</p>
+		<input type = "submit" />
+	</form>
+	
+	<br />
+	
+	<form th:action = "@{/add}">
+		<input type = "submit" value = "查看"  />
+	</form>
+	
+	<br />
+
+	<form th:action = "@{/result}">
+		<input type = "submit" value = "搜尋特定的人"  />
+	</form>
+	
+</body>
+</html>
